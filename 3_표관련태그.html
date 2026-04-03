@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>표 관련 태그</title>
+
+        <!-- style 태그 : CSS 영역 -->
+        <style>
+            /*
+                CSS 영역의 주석 : style 태그 내부에서는 html 주석이 먹히지 않음
+            */
+
+            /*
+                테이블 영역 별로 서로 다른 스타일을 부여해보자!!
+            */
+            
+            /* 이 문서 내의 모든 thead 태그를 선택하겠다. */
+            thead {
+                background-color: magenta; /* 배경색 */
+                color : white; /* 글자색 */
+            }
+
+            /* 이 문서 내의 모든 tfoot 태그를 선택하겠다. */
+            tfoot {
+                background-color: darkgreen;
+                color: yellow;
+            }
+
+            /* 이 문서 내의 모든 tbody 태그를 선택하겠다. */
+            /*
+            tbody {
+                background-color: lightgray;
+            }
+            */
+
+            /* 이 문서 내의 id 속성값이 "tt" 인 태그에만 스타일을 적용하겠다. */
+            /* 이 문서 내의 id 속성값이 "tt" 인 태그를 선택하겠다. */
+            #tt {
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <!-- 
+            * 표 (table)
+
+            - 문서 상의 다량의 데이터를 정리해서 표현하고자 할 때 사용됨
+            - 행과 열로 이루어져 있음
+
+            - 표를 구성하는 태그로는
+              <table>, <tr>, <th>, <td>
+
+            <table></table> : 기본적으로 표를 생성해주는 태그 (표의 영역을 나타냄)
+
+            <tr></tr> : 표의 한 행을 나타내는 태그 (가로줄 1줄)
+
+            <th></th> : 표의 셀 (한 칸) 을 나타내는 태그
+                        주로 컬럼명 등을 나타낼 때 사용함
+
+            <td></td> : 표의 셀 (한 칸) 을 나타내는 태그
+                        주로 테이블의 내용을 나타낼 때 사용함
+        -->
+
+        <h1>기본적인 표 만들기 (4행 3열)</h1>
+
+        <!-- border : 표의 테두리 두께 -->
+        <table border="1">
+
+            <!--
+                caption : 테이블의 제목을 추가할 수 있는 태그
+                          기본 위치
+            -->
+            <caption>웹 브라우저 종류</caption>
+
+            <tr>
+                <!--
+                    기본적으로 th 와 td 의 크기;
+                    안쪽에 작성한 텍스트의 내용만큼만 감싸지게 가로, 세로 길이가 지정됨
+                    width 와 height 로 각각 가로, 세로 길이를 지정도 가능!!
+                -->
+                <th width="130" height="30">브라우저명</th>
+                <th width="80">제조사</th>
+                <th width="200">홈페이지</th>
+            </tr>
+            <tr>
+                <td>Internet Explorer</td>
+                <td>MS</td>
+                <td>http://www.microsoft.com</td>
+            </tr>
+            <tr>
+                <td>Chrome</td>
+                <td>Google</td>
+                <td>http://www.google.com</td>
+            </tr>
+            <tr>
+                <td>Firefox</td>
+                <td>Mozilla</td>
+                <td>http://www.mozilla.org</td>
+            </tr>
+        </table>
+
+        <br>
+        <hr>
+
+        <h1>표의 행과 열을 합치는 속성</h1>
+
+        <!--
+            셀 (th, td) 태그와 속성을 이용해서 행 또는 열을 합칠 수 있음
+            
+            colspan="2" : 2 개의 열을 합치겠다.
+            rowspan="2" : 2 개의 행을 합치겠다.
+        -->
+
+        <h3>이력서</h3>
+
+        <table border="1">
+            <tr>
+                <td colspan="2" rowspan="2" whdth="90" height="130">
+                    사진
+                </td>
+                <td width="60">이름</td>
+                <td width="300"></td>
+            </tr>
+            <tr>
+                <td>연락처</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td height="50">주소</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td height="400">자기소개</td>
+                <td colspan="3"></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <hr>
+
+        <h1>테이블 내에 구조 나누기</h1>
+
+        <!--
+            thead 영역 : 테이블의 머리부
+                         테이블 당 하나만 존재 가능
+                         반드시 tbody 영역 위에 존재
+            tbody 영역 : 테이블의 몸통부
+                         테이블 당 여러개 존재 가능
+                         테이블 생성 시 영역을 아예 나누지 않을 경우
+                         기본적으로 해당 테이블이 통째로 tbody 영역으로 잡힘!!
+            tfoot 영역 : 테이블 다리부
+                         테이블 당 하나만 존재 가능
+                         반드시 tbody 영역 아래에 존재
+
+            - 각각 <thead>, <tbody>, <tfoot> 태그로 영역 나누기 가능!!
+            - 테이블 내에 영역을 나누게 되면 당장 눈에 보이는 효과는 없지만,
+              CSS, JavaScript 등으로 효과를 줄 때
+              영역별로 다른 스타일 또는 동적인 효과를 줄 수 있게 됨
+        -->
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th width="70">이름</th>
+                    <th width="70">나이</th>
+                    <th width="70">주소</th>
+                </tr>
+            </thead>
+
+            <tbody id="tt">
+                <tr>
+                    <td>홍길동</td>
+                    <td>23</td>
+                    <td>서울시</td>
+                </tr>
+                <tr>
+                    <td>김갑생</td>
+                    <td>26</td>
+                    <td>부산시</td>
+                </tr>
+                <tr>
+                    <td>박말순</td>
+                    <td>21</td>
+                    <td>대전시</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>총 인원</th>
+                    <td colspan="2">3명</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <br>
+        <hr>
+
+        <!-- html 응용문제 3 -->
+
+        <h3>자유게시판</h3>
+
+            <table border="1">
+                <tr>
+                    <th width="60">글번호</th>
+                    <th width="300">제목</th>
+                    <th width="70">작성자</th>
+                    <th width="90">작성일</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>안녕하세요</td>
+                    <td>user03</td>
+                    <td>2020-12-22</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ㅋㅋㅋ재밌네요</td>
+                    <td>user01</td>
+                    <td>2020-10-02</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>자유게시판 서비스를 시작합니다.</td>
+                    <td>admin</td>
+                    <td>2020-03-30</td>
+                </tr>
+        </table>
+
+        <!-- 나중에는 글 1 ~ 3 내용을 실제 DB 로부터 조회해서 화면에 뿌려줄 것!! -->
+
+        <h2>주간메뉴표</h2>
+        <table border="1">
+            <tr>
+                <th>구분</th>
+                <th>월(8/21)</th>
+                <th>화(8/22)</th>
+                <th>수(8/23)</th>
+                <th>목(8/24)</th>
+                <th>금(8/25)</th>
+            </tr>
+            <tr>
+                <td rowspan="3">중식</td>
+                <td>계란프리타타</td>
+                <td>탕수육</td>
+                <td>제육두루치기</td>
+                <td>훈제오리로스</td>
+                <td>수제돈까스</td>
+            </tr>
+            <tr>
+                <td>
+                    김치 제육볶음<br>
+                    우엉채조림<br>
+                    콩나물무침<br>
+                    열무김치<br>
+                    적채샐러드<br>
+                    배추된장국<br>
+                    햄야채 볶음밥<br>
+                    흰밥 / 잡곡밥
+                </td>
+                <td>
+                    짜장<br>
+                    오이양파초무침<br>
+                    단무지무침<br>
+                    배추겉절이<br>
+                    야채샐러드<br>
+                    콩나물국<br>
+                    계란볶음밥<br>
+                    흰밥 / 잡곡밥<br>
+                </td>
+                <td>
+                    잡채<br>
+                    어묵볶음<br>
+                    치커리무침<br>
+                    열무김치<br>
+                    양상추 샐러드<br>
+                    김치 순두부국<br>
+                    호박 볶음밥<br>
+                    흰밥 / 잡곡밥
+                </td>
+                <td>
+                    교자 비빔만두<br>
+                    감자조림<br>
+                    양배추 / 쌈장<br>
+                    배추겉절이<br>
+                    치커리 샐러드<br>
+                    미역국<br>
+                    콘빈스 볶음밥<br>
+                    흰밥 / 잡곡밥
+                </td>
+                <td>
+                    카레라이스<br>
+                    청포묵무침<br>
+                    영양부추 무침<br>
+                    열무김치<br>
+                    비트샐러드<br>
+                    얼갈이 된장국<br>
+                    파프리카 볶음밥<br>
+                    흰밥 / 잡곡밥
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>원산지</td>
+                <td colspan="5">겉절이,깍두기,얼갈이,알타리:국내산 김치,고추가루:중국산 쌀:국내산 제육:국내산</td>
+            </tr>
+            <tr>
+                <td colspan="6">※ 주간메뉴는 식당 사정에 따라 변동될 수 있음을 알려드립니다.</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
