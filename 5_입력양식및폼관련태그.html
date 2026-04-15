@@ -4,7 +4,7 @@
         <title>입력양식 및 폼 관련 태그</title>
     </head>
     <body>
-        
+
         <h1>입력양식 관련 태그</h1>
 
         <h2>input 태그</h2>
@@ -18,7 +18,7 @@
 
         아이디 : <input type="text"> <br>
         비밀번호 : <input type="password"> <br>
-        성별: <input type="radio"> 남 <input type="radio"> 여
+        성별 : <input type="radio"> 남 <input type="radio"> 여
 
         <br><br>
 
@@ -43,8 +43,8 @@
             [ 표현법 ]
 
             &lt;form action="" method=""&gt;
-            
-                각종 input 태그로 조합하여 입력양식 화면 꾸리기
+
+                각종 input 태그를 조합하여 입력양식 화면 꾸리기
 
                 submit (제출) 버튼
 
@@ -66,22 +66,22 @@
             제출 (submit) 버튼 클릭 시
             action 에 지정한 Controller 로 method 에 작성한 요청 전송 방식으로
             사용자가 입력한 값들을 key=value&key=value&... 세트로 전달한다.
-            이 때, 여러 key=value&key=value... 를 "쿼리스트랑" 이라고 부른다.
+            이 때, 여러 key=value&key=value&... 를 "쿼리스트링" 이라고 부른다!!
         </pre>
 
         <br>
 
         <form action="test" method="get">
-
-            검색어 : <input type="text" name="keyword">
             
+            검색어 : <input type="text" name="keyword">
+
             <input type="submit" value="검색">
 
         </form>
 
         <!--
-            검색어를 입력하고 검색 (submit) 버튼을 클릭하는 순간
-            주소창에 test?keyword=kh정보교육원 으로 요청이 들어감!!
+            - 검색어를 입력하고 검색 (submit) 버튼을 클릭하는 순간
+              주소창에 test?keyword=kh정보교육원 으로 요청이 들어감!!
 
             - 항상 input 태그 내에 name 속성을 통해
               요청 시 전달값에 대한 key 값도 같이 기술해야한다!!
@@ -124,7 +124,7 @@
         <!--
             - 항상 form 태그 안에는 submit 버튼을 하나만 만들어 줘야 함!!
             - fieldset 은 말 그대로 테두리 (선) 만 그어주는 역할임!!
-              그래서 fieldset 을 여러개 만들었다고 해서 그 안쪽마다 submit 버튼
+              그래서 fieldset 을 여러개 만들었다고 해서 그 안쪽마다 submit 버튼을
               일일이 다 적어주면 안됨!!
         -->
 
@@ -136,7 +136,7 @@
 
         <form action="test" method="post">
 
-            <h3>type="test</h3>
+            <h3>type="text</h3>
 
             <p>
                 - 한줄짜리 텍스트를 입력할 수 있는 텍스트 상자 (기본값)
@@ -151,7 +151,7 @@
 
             <!--
                 - label 태그는 라디오버튼과 체크박스에만 쓸 수 있는게 아니라
-                  일반적인 input 태그에도 적용 가능하다!!       
+                  일반적인 input 태그에도 적용 가능하다!!
             -->
 
             <br>
@@ -163,7 +163,7 @@
                   (입력값이 마스킹 되어 노출 X)
             </p>
 
-            비밀번호 :
+            비밀번호 : 
             <input type="password" name="userPwd"
                    placeholder="영문,숫자,특수문자 포함 8~15"
                    maxlength="15"
@@ -181,22 +181,22 @@
             검색 : 
             <input type="search" name="keyword"
                    placeholder="검색어 입력">
-            
+
             <br>
 
             홈페이지 : 
             <input type="url" name="homepage"
                    placeholder="홈페이지 주소 입력"
-                   value="http://">
+                   value="http://"> 
 
             <br>
 
-            이메일 :
+            이메일 : 
             <input type="email" name="email"
                    placeholder="이메일 입력">
-            
-            <br>
 
+            <br>
+ 
             <input type="submit">
         </form>
 
@@ -216,21 +216,21 @@
             <fieldset>
                 <legend>글 작성</legend>
 
-                글 제목 :
+                글 제목 : 
                 <input type="text" name="title" size="30">
 
                 <br><br>
 
-                글 내용 :
+                글 내용 : 
                 <textarea name="content"
                           cols="30" rows="10"
-                          style="resize: none;"></textarea>
-            
+                          style="resize : none;"></textarea>
+
 
                 <br><br>
 
                 <input type="submit" value="작성하기">
-
+                
             </fieldset>
 
         </form>
@@ -266,7 +266,7 @@
                 - 옆에 스핀박스가 표시됨 (스핀박스 : 위, 아래 화살표 버튼)
             </p>
 
-            수량 :
+            수량 : 
             <input type="number" name="amount"
                    min="0" max="20" step="5" value="0">
 
@@ -278,7 +278,7 @@
                 - 슬라이드바를 통해 숫자 입력 가능
             </p>
 
-            점수 :
+            점수 : 
             <input type="range" name="score"
                    min="0" max="100" step="20">
 
@@ -288,30 +288,30 @@
             <input type="reset">
 
         </form>
-    
+
         <br><br>
 
         <hr>
 
-        <h2>날짜 와 시간과 관련된 input 태그의 타입</h2>
+        <h2>날짜 및 시간과 관련된 input 태그의 타입</h2>
 
         <form action="test" method="get">
 
             <h3>type="date/month/week/time/datetime-local"</h3>
 
-            date :
+            date : 
             <input type="date" name="dateIn">
             <!-- 년, 월, 일을 입력받을 수 있는 텍스트 상자 -->
 
             <br><br>
 
-            month :
+            month : 
             <input type="month" name="monthIn">
             <!-- 년, 월 까지만 입력받을 수 있는 텍스트 상자 -->
 
             <br><br>
 
-            week :
+            week : 
             <input type="week" name="weekIn">
             <!-- 년, 해당 년도의 몇번째 주인지를 입력받을 수 있는 텍스트 상자 -->
 
@@ -323,19 +323,19 @@
 
             <br><br>
 
-            datetime-local :
+            datetime-local : 
             <input type="datetime-local" name="datetime-localIn">
             <!-- 년, 월, 일, 오전/오후, 시, 분 을 입력받을 수 있는 텍스트 상자 -->
 
             <br><br>
 
             <!--
-            <input type="submit">
+            <input type="submit"> 
             <input type="reset">
             -->
 
             <button type="submit">제출</button>
-            <button type="reset">초기화</button>
+            <button type="reset">초기화</button> 
 
         </form>
 
@@ -343,7 +343,7 @@
 
         <hr>
 
-        <h2>라디오 버튼과 체크박스 관련 input 태그의 타입</h2>
+        <h2>라디오버튼과 체크박스 관련 input 태그의 타입</h2>
 
         <form action="test" method="post">
 
@@ -361,9 +361,9 @@
             <input type="radio" name="gender" value="M" id="radioM"> <label for="radioM">남</label>
             <input type="radio" name="gender" value="F" id="radioF"> <label for="radioF">여</label>
             <input type="radio" name="gender" value="X" id="radioX" checked> <label for="radioX">선택안함</label>
-            <!-- 처음부터 체크되거 보여지게끔 하고 싶다면 checked 속성을 기술하면 된다 -->
+            <!-- 처음부터 체크되서 보여지게끔 하고 싶다면 checked 속성을 기술하면 된다!! -->
 
-            <br><br>
+            <br><br>  
 
             <h3>체크박스 (type="checkbox")</h3>
 
@@ -373,24 +373,24 @@
                 - name 속성값을 동일하게 작성하여 체크박스끼리 묶으면
                   하나의 그룹으로 이어짐 (그 묶인 체크박스들 중 여러개를 체크 가능하게끔) <br>
                 - 제출 버튼 클릭 시 현재 선택된 (checked) value 값들이 넘어감
-            </p>
+            </p> 
 
             취미 : 
-            <input type="checkbox" name="hobby" value="baseball" id="baseball" checked> <label for="baseball">야구</label>
+            <input type="checkbox" name="hobby" value="baseball" id="baseball"> <label for="baseball">야구</label>
             <input type="checkbox" name="hobby" value="basketball" id="basketball"> <label for="basketball">농구</label>
             <input type="checkbox" name="hobby" value="soccer" id="soccer"> <label for="soccer">축구</label>
 
             <!--
                 - 체크박스의 경우 선택된 value 값들이 하나의 키값 (name 속성) 에 묶여서 넘어감!!
                 - 이 경우 Controller 에서 자바의 문자열 배열로 받을 수 있다!!
-                  예)
+                  예) 
                   야구와 축구를 선택 후 제출 버튼을 클릭했을 경우
                   Controller 에서
                   String[] hobby = {"baseball", "soccer"};
-                  형식으로 받아올 수 있게된다.
+                  형식으로 받아볼 수 있게된다.
             -->
 
-            <br><br>
+            <br><br>  
 
             <input type="submit">
 
@@ -417,8 +417,8 @@
                 RGB : R (빨강), G (초록), B (파랑)
                       각 색상에 대한 숫자값 (0 ~ 255 사이) 을 조합해서 지정
                 HSL : H (색상값), S (채도), L (명도)
-                      색상값을 지정하고 그 색상의 채도와 명도를 조정해서 지정
-                HEX : #16진수 형태로 색상을 나타냄
+                      색상값을 지정하고 그 색상의 채도와 명도를 조정해서 지정 
+                HEX : #16진수 형태로 색상을 나타냄     
             -->
 
             <br><br>
@@ -447,20 +447,20 @@
 
             <br><br>
 
-            <h3>버튼을 생성방법 총 정리</h3>
+            <h3>버튼 생성방법 총 정리</h3>
 
             <h4>- input type="submit/reset/button"</h4>
 
             <input type="submit"> <!-- value="제출" -->
             <input type="reset"> <!-- value="초기화" -->
-            <input type="button" value="일반버튼">
+            <input type="button" value="일반버튼"> 
 
             <br><br>
 
             <h4>- button type="submit/reset/button"</h4>
-        
+
             <button type="submit">제출</button>
-            <button type="reset">초기화</button>
+            <button type="reset">초기화</button> 
             <button type="button">일반버튼</button>
 
             <br><br>
@@ -469,11 +469,11 @@
 
             <button>type 속성 생략 시?</button>
             <!--
-               - button 태그에 type 속성 생략 시 기본값이 submit 임!!
-                 그래서 form 태그 내에서 button 태그 작성 시
-                 무조건 type 속성을 일일이 명시해주는 것이 제일 좋음!!
-                 (form 태그 하나당)
-
+                - button 태그에 type 속성 생략 시 기본값이 submit 임!!
+                  그래서 form 태그 내에서 button 태그 작성 시
+                  무조건 type 속성을 일일이 명시해주는 것이 제일 좋음!!
+                  (form 태그 하나당 버튼을 여러개 둘 수 있고,
+                   그 중에 하나만 submit 버튼이여야만 하니까 헷갈리지 않도록)
             -->
 
         </form>
@@ -482,24 +482,24 @@
 
         <hr>
 
-        <h2>select태그와 option 태그</h2>
+        <h2>select 태그와 option 태그</h2>
 
         <p>
             - 사용자에게 직접 키보드로 값을 입력받는게 아니라
-              내가 제시한 여러 옵견들 중에서 드롭다운 형식으로 선택할 수 있도록 해줌 <br>
+              내가 제시한 여러 옵션들 중에서 드롭다운 형식으로 선택할 수 있도록 해줌 <br>
             - select 태그로 여러개의 option 태그들을 묶어서 표현한다. <br>
-            - select 태그에 name 속성을 한번만 적어서 키값을 정의해두고
-              각 option 태그마다 value 속성값으로 넘길값을 적어준다!! <br>
-            - 제출 버튼 클릭 시 현재 선택된 (selected) 값이 넘어감 <br>
-              (단, option 태그에 value 속성을 생략하면
+            - select 태그에 name 속성을 한번만 적어서 키값을 정의해두고,
+              각 option 태그마다 value 속성값으로 넘길 값을 적어준다!! <br>
+            - 제출 버튼 클릭 시 현재 선택된 (selected) value 값이 넘어감 <br>
+              (단, option 태그에 value 속성을 생략하면 
                시작태그와 종료태그 사이의 값이 value 로써 넘어간다)
             - 명시적으로 selected 속성을 지정해서 기본 선택값을 지정할 수 있다. <br>
-              (명시적으로 selected 속성을 적지 않으면 기본적으로 맨 위의 항목이 기존 선택값이 된다)
+              (명시적으로 selected 속성을 적지 않으면 기본적으로 맨 위의 항목이 기본 선택값이 된다)
         </p>
 
         <form action="test" method="post">
 
-            국적 :
+            국적 : 
             <select name="national">
                 <option value="ko">한국</option>
                 <option value="us">미국</option>
@@ -513,302 +513,30 @@
             <h4>- HTML5 에서 새로 추가된 기능</h4>
 
             <!--
-                * datalist
+                * datalist 
 
-                - 기존의 select, option 과 같이 드롭다운 형식으로 여러개의 선택자 중
+                - 기존의 select, option 과 같이 드롭다운 형식으로 여러개의 선택지 중
                   하나를 선택해서 입력받는 요소
                 - 만약 목록에 없더라도 직접 텍스트 상자에 값을 기술해서 넘길 수 있다.
                 - 즉, 텍스트상자 + select, option 의 역할을 해줌
             -->
 
-            좋아하는 색상 :
+            좋아하는 색상 : 
             <input type="text" name="color" list="colorList">
 
             <datalist id="colorList">
                 <option value="black">검정색</option>
                 <option value="white">흰색</option>
-                <option value=skyblue">하늘색리스트option>
+                <option value="skyblue">하늘색</option>
                 <option value="pink">핑크색</option>
             </datalist>
+
+            <br><br>
 
             <input type="submit">
 
         </form>
 
-        <form action="test">
-            <fieldset>
-                <legend>회원가입 동의서</legend>
-                이용약관 동의(필수)<br>
-                <textarea cols="50" rows="8" style="resize: none;" readonly>
-여러분 환영합니다.
-네이버 서비스 및 제품(이하 '서비스')을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 '네이버')와 이를 이용하는 네이버 서비스 회원(이하 '회원') 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.                  
-                </textarea>
-                <br>
-                <input type="radio" name="agree1" value="agree1" id="agree1"> 동의합니다.
-                <input type="radio" name="agree1" value="x" id="x" checked> 동의하지않습니다.
-                <br><br>
-                개인정보 수집 및 이용 동의(필수)<br>
-                <textarea cols="50" rows="8" style="resize: none;" readonly>
-개인정보보호법에 따하 네이버에 회원가입 신청하시는  분들께 수집하는 개인정보의 항복 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 등의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
-1. 수집하는 개인정보
-이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 네이버 서비스를 회원과 동일하게 이
-                </textarea>
-                <br>
-                <input type="radio" name="agree2" value="agree2" id="agree2"> 동의합니다.
-                <input type="radio" name="agree2" value="x" id="x" checked> 동의하지않습니다.
-                <br><br>
-                <input type="checkbox" name="agree" value="agree" id="agree"> 모두 동의합니다.
-                <br><br>
-                <button type="button">취소</button>
-                <button type="submit">확인</button>
-            </fieldset>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>회원가입 양식</legend>
-                * 아이디<br>
-                <input type="text" name="id" id="id"  placeholder="영문 소문자, 숫자, 특수기호(_,-)5~20" maxlength="20" minlength="5" size="30" required>
-                <button type="button">아이디 중복 확인</button>
-                <br><br>
-                * 비밀번호<br>
-                <input type="password" name="password" id="password" placeholder="영문, 숫자, 특수문자 8~15" maxlength="15" minlength="8" size="30" required>
-                <br><br>
-                * 비밀번호 재확인<br>
-                <input type="password" name="passwordcheck" id="passwordcheck" placeholder="영문, 숫자, 특수문자 8~15" maxlength="15" minlength="8" size="30" required>
-                <br><br>
-                * 이름<br>
-                <input type="text" name="name" id="name" size="30" required>
-                <br><br>
-                * 주민등록번호<br>
-                <input type="text" name="ssn1" id="ssn1" size="11" maxlength="6" minlength="6" required> - <input type="text" name="ssn2" id="ssn2" size="12" maxlength="7" minlength="7" required>
-                <br><br>
-                * 성별<br>
-                <input type="radio" name="gender" id="X" value="X" checked> 선택안함
-                <input type="radio" name="gender" id="M" value="M"> 남자
-                <input type="radio" name="gender" id="F" value="F"> 여자
-                <br><br>
-                * 생년월일<br>
-                <input type="date" name="birthdate" id="birthdate">
-                <br><br>
-                주소<br>
-                <input type="text" name="address" id="address" size="30">
-                <br><br>
-                우편번호<br>
-                <input type="text" name="postnum" id="postnum" size="17">
-                <input type="button" value="우편번호찾기">
-                <input type="checkbox" name="postagree" id="postagree">우편 수신 동의
-                <br><br>
-                 이메일<br>
-                <input type="email" name="email" id="email" size="30">
-                <input type="checkbox" name="emailagree" id="emailagree">이메일 수신 동의
-                <br><br>
-                 휴대폰번호<br>
-                <select name="phone" id="phone">
-                    <option value="010">010</option>
-                    <option value="011">011</option>
-                    <option value="012">012</option>
-                </select> - 
-                <input type="text" size="5"> -
-                <input type="text" size="5">
-                <input type="checkbox" name="message" id="message">문자 수신 동의
-                <br><br>
-                <button type="reset">초기화</button>
-                <button type="submit">가입하기</button>
-            </fieldset>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>로그인</legend>
-                <table>
-                    <tr>
-                        <td>아이디</td>
-                        <td><input type="text" size="15" maxlength="20" minlength="5" required></td>
-                        <td rowspan="2"><input type="submit" value="로그인"></td>
-                    </tr>
-                    <tr>
-                        <td>비밀번호</td>
-                        <td><input type="text" size="15" maxlength="15" minlength="8" required></td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>납품자 정보</legend>
-                <table>
-                    <tr>    
-                        <td>납품자명</td>
-                        <td><input type="text" placeholder="ex) 홍길동"></td>
-                    </tr>
-                    <tr>
-                        <td>email</td>
-                        <td><input type="text" placeholder="ex)ex@ex.com"></td>
-                    </tr>
-                    <tr>
-                        <td>홈페이지</td>
-                        <td><input type="url" name="url" id="url" placeholder="http://"></td>
-                    </tr>
-                </table>
-            </fieldset>
-            <fieldset>
-                <legend>납품 정보</legend>
-                <table>
-                    <tr>
-                        <td>상품명</td>
-                        <td><input type="text" name="name" id="name"></td>
-                    </tr>
-                    <tr>
-                        <td>납품수량</td>
-                        <td><input type="number" name="amount" id="amount" placeholder="최소100" min="100"></td>
-                    </tr>
-                    <tr>
-                        <td>납품등급</td>
-                        <td><input type="range" name="rank" id="rank"></td>
-                    </tr>
-                    <tr>
-                        <td>기타사항</td>
-                        <td><textarea name="detail" id="detail" cols="22" rows="3" style="resize: none;"></textarea></td>
-                    </tr>
-                </table>
-            </fieldset>
-            <br>
-            <button type="reset">초기화</button>
-            <button type="submit">전송</button>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>게시글 작성</legend>
-                <table>
-                    <tr>
-                        <td>글제목</td>
-                        <td><input type="text" name="title" id="title"></td>
-                    </tr>
-                    <tr>
-                        <td>작성자</td>
-                        <td><input type="text" name="id" id="id" value="user01" style="background-color: gainsboro;" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>글내용</td>
-                        <td><textarea name="text" id="text" rows="9" style="resize: none;" placeholder="300자 이내로 작성"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>첨부파일</td>
-                        <td><input type="file" name="upfile" id="upfile"></td>
-                    </tr>
-                </table>
-                <input type="reset">
-                <input type="submit" value="등록">
-            </fieldset>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>개발자 지원서</legend>
-                <p>Java, Oracle, JDBC, Frontend 기술을 이해하고 열정적으로 일할 수 있는 분을 찾습니다.</p>
-                <hr>
-                <h3>개인 정보</h3>
-                <table>
-                    <tr>
-                        <td>이름</td>
-                        <td><input type="text" name="name" id="name" size="25" placeholder="공백 없이 입력하세요" required></td>
-                    </tr>
-                    <tr>
-                        <td>연락처</td>
-                        <td><input type="text" name="phone" id="phone" size="25" placeholder="숫자만 입력하세요 (-제외)" required></td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td><input type="email" name="email" id="email" size="25" placeholder="이메일 형식에 맞게 입력하세요" required></td>
-                    </tr>
-                </table>
-                <br>
-                <h3>지원 분야</h3>
-                <input type="radio" name="Java" id="Java">Java <br>
-                <input type="radio" name="Oracle" id="Oracle">Oracle <br>
-                <input type="radio" name="JDBC" id="JDBC">JDBC <br>
-                <input type="radio" name="Frontend" id="Frontend"> Frontend<br>
-                <br>
-                <h3>지원 동기</h3>
-                <textarea name="detail" id="detail" cols="40" rows="10" placeholder="300자 이내로 작성하세요" style="resize: none;"></textarea>
-                <br>
-                <input type="reset">
-                <button type="submit">접수</button>
-            </fieldset>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>배송 정보</legend>
-                <table>
-                    <tr>
-                        <td>이름</td>
-                        <td><input type="text" name="name" id="name" size="28" required></td>
-                    </tr>
-                    <tr>
-                        <td>배송 주소</td>
-                        <td><input type="text" name="address" id="address" size="28" required></td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td><input type="email" name="email" id="email" size="28" required></td>
-                    </tr>
-                    <tr>
-                        <td>연락처</td>
-                        <td><input type="text" name="phone" id="phone" size="28" required></td>
-                    </tr>
-                    <tr>
-                        <td>배송 지정</td>
-                        <td><input type="date" name="date" id="date">(주문일로부터 최소 3일 이후)</td>
-                    </tr>
-                    <tr>
-                        <td>메모</td>
-                        <td><textarea name="memo" id="memo" cols="35" rows="5" style="resize: none;"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td><input type="reset"></td>
-                        <td><button type="submit">등록</button></td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
-        <form action="test">
-            <fieldset>
-                <legend>예약자 정보</legend>
-                <table>
-                    <tr>
-                        <th>이름</th>
-                        <td><input type="text" name="name" id="name" size="25" required></td>
-                    </tr>
-                    <tr>
-                        <th>연락처</th>
-                        <td><input type="text" name="phone" id="phone" size="25"></td>
-                    </tr>
-                    <tr>
-                        <th>이메일</th>
-                        <td><input type="email" name="email" id="email" size="25"></td>
-                    </tr>
-                    <tr>
-                        <th>요청 사항</th>
-                        <td><textarea name="ask" id="ask" cols="27" rows="5" style="resize: none;"></textarea></td>
-                    </tr>
-                </table>
-            </fieldset>
-            <fieldset>
-                <legend>예약 일자</legend>
-                <input type="date" name="date1" id="date1"> - <input type="date" name="date2" id="date2">
-            </fieldset>
-            <fieldset>
-                <legend>객실 형태</legend>
-                <input type="radio" name="standardtwinroom" id="standardtwinroom"> 스탠다드 트윈룸<br>
-                <input type="radio" name="standarddoubleroom" id="standarddoubleroom"> 스탠다드 더블룸<br>
-                <input type="radio" name="superiortwinroom" id="superiortwinroom"> 수페리어 트윈룸<br>
-                <input type="radio" name="familysweetroom" id="familysweetroom">패밀리 스위트룸
-            </fieldset>
-            <fieldset>
-                <legend>기타 옵션</legend>
-                <input type="checkbox" name="earlycheckin" id="earlycheckin"> 얼리체크인
-                <input type="checkbox" name="breakfast" id="breakfast"> 조식
-                <input type="checkbox" name="airportpickupservice" id="airportpickupservice"> 공항 픽업 서비스
-            </fieldset>
-        </form>
     </body>
 </html>
 
